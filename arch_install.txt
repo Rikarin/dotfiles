@@ -19,7 +19,7 @@ rm -rf package-query
 rm -rf yaourt
 
 # GUI
-sudo pacman -S xorg xorg-server xorg-xinit xorg-server-utils xorg-apps nautilus leafpad
+sudo pacman -S xorg xorg-server xorg-xinit xorg-server-utils xorg-apps nautilus leafpad lua ruby libpulse
 yaourt -S bspwm sxhkd tint2 dmenu conky-lua-archers
 
 # Terminal
