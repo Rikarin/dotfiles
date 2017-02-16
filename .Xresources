@@ -1,18 +1,18 @@
 #include ".colors/solarized/xresources/solarized"
 
-URxvt*termName: rxvt-256color
-
-Xft.dpi:	96
-Xft.antialias:	true
-Xft.rgba:	rgb
-Xft.hinting:	true
-Xft.hintstyle:	hintslight
-
-#URxvt*font:      xft:Inconsolata\ for\ Powerline:size=10:hinting=True;antialias:True,xft:PowerlineSymbols:pixelsize=15,xft:Font Awesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-#URxvt*boldFont:  xft:Hack:size=10:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
-
-URxvt*font:	xft:PragmataPro:size=12:bold
-
-URxvt.scrollstyle: plain
-URxvt.transparent: true
-URxvt.shadong: 10
+# URxvt*termName: rxvt-256color
+# 
+# Xft.dpi:	96
+# Xft.antialias:	true
+# Xft.rgba:	rgb
+# Xft.hinting:	true
+# Xft.hintstyle:	hintslight
+# 
+# #URxvt*font:      xft:Inconsolata\ for\ Powerline:size=10:hinting=True;antialias:True,xft:PowerlineSymbols:pixelsize=15,xft:Font Awesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
+# #URxvt*boldFont:  xft:Hack:size=10:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
+# 
+# URxvt*font:	xft:PragmataPro:size=12:bold
+# 
+# URxvt.scrollstyle: plain
+# URxvt.transparent: true
+# URxvt.shadong: 10
