@@ -1,0 +1,129 @@
+export TERM="xterm-256color"
+export PATH=/home/rene/RikarinStudio/bin:$PATH
+
+###############################################################################
+# Path to oh-my-zsh
+ZSH=~/.dotfiles/zsh/oh-my-zsh
+
+# Enable oh-my-zsh plugins here.
+plugins=(git history-substring-search fasd brew forklift)
+
+
+# Use the powerlevel9k theme!
+ZSH_THEME="../../powerlevel9k_theme/powerlevel9k"
+POWERLEVEL9K_MODE="awesome-patched"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda background_jobs)
+# Overwrite a couple of settings.
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch)
+
+
+# Source oh-my-zsh.
+source $ZSH/oh-my-zsh.sh
+
+# Overwrite the history length setting from oh-my-zsh! Keep everything - it
+# does not take a lot of space!
+HISTSIZE=100000000000000
+SAVEHIST=100000000000000
+
+# Enable vi keybindings.
+bindkey -v
+
+# Source the zsh syntax highlighter. For some reason this is not included in
+# oh-my-zsh. Source after oh-my-zsh!
+source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Add zsh-completions.
+fpath=(~/.dotfiles/zsh/zsh-completions/src $fpath)
+
+# Make 'z' work like autojump.
+alias j="z"
+# Slash after directories, colorize, KB,MB,... when appropriate
+alias ls='ls -GF'
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
+# Disable auto-update prompt
+DISABLE_AUTO_UPDATE="true"
+
+# Disable setting of terminal titles.
+DISABLE_AUTO_TITLE="true"
+
+# Show red dots while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+###############################################################################
+
+
+###############################################################################
+# Enable history substring search with vi and emacs keys. Much more intuitive!
+# From https://github.com/zsh-users/zsh-history-substring-search/issues/12
+bindkey -M emacs "^P" history-substring-search-up
+bindkey -M emacs "^N" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
+
+for keymap in 'emacs' 'viins'; do
+    bindkey -M "$keymap" '\e[A' history-substring-search-up
+    bindkey -M "$keymap" '\e[B' history-substring-search-down
+done
+unset keymap
+
+# Remove the ugly pink default color!
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+###############################################################################
+
+
+############################################################
+# ALIASES
+
+# Some aliases should only be set while using OSX.
+if [[ "$OSTYPE" == darwin* ]]; then
+    # Propert 256 color tmux. Also OSX needs special care for copy/paste to
+    # work inside tmux. This will source the basic tmux.conf and execute one
+    # special command for copy/paste to work.
+    alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux-osx.conf"
+    # Alias Quicklook for some filetypes. Simply typing the filename should
+    # open Quicklook with the file. The quicklook command require the osx module
+    # from oh-my-zsh or at least the ql command.
+    # Websites
+    alias -s html=ql
+    alias -s htm=ql
+    # Markdown
+    alias -s md=ql
+    alias -s markdown=ql
+    # Image files
+    alias -s png=ql
+    alias -s jpg=ql
+    alias -s jpeg=ql
+    alias -s gif=ql
+    alias -s bmp=ql
+    # Misc
+    alias -s pdf=ql
+    alias -s txt=ql
+    # Open files in Quick Look.
+    function ql {
+        (( $# > 0 )) && qlmanage -p "$@" &> /dev/null
+    }
+else
+    # On non-OSX the simple tmux.conf is sufficient.
+    alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux.conf"
+    # Alias xdg-open to open on linux.
+    alias open="xdg-open"
+fi
+############################################################
+
+
+############################################################
+# RANDOM THINGS
+# Locale exports are necessary for some programs...
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+############################################################
+
+
+############################################################
+# PATHS. Currently adds miniconda, homebrew, and TeX related binaries.
+export PATH=~/.miniconda3/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/texbin
+############################################################

@@ -1,0 +1,150 @@
+" Lion's personal vimrc. More advanced settings are stored in files in the
+" settings subfolder. Every .vim file in there will be automatically sourced.
+"
+" REQUIREMENTS: Symlink this file to ~/.vimrc and its parent folder to ~/.vim
+" Necessary so everything can be found and no absolute paths are necessary.
+
+
+" Use vim settings instead of vi settings. MUST be the first thing in the
+" vimrc.
+set nocompatible
+
+" =============================================================================
+" ========= Pathogen initialization
+" Use pathogen to load all other plugins. Automatically loads all plugins in
+" the bundle subfolder.
+source $HOME/.dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
+" runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect("$HOME/.dotfiles/vim/bundle/{}")
+" Generate documentation for all plugins in the bundle subfolder.
+call pathogen#helptags()
+
+
+" =============================================================================
+" ========== General configuration
+let mapleader=","               " change the leader key to colon. Much easier
+
+map <F12> :mksession! .vim_session <cr>
+map <F2> :source .vim_session <cr>
+map <F4> ccassert(false, "TODO");<ESC>
+noremap <leader>w :w<cr>
+
+                                " to reach than the standard backslash.
+set noswapfile
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+set t_Co=256                    " Enable 256 color in vim.
+set laststatus=2                " Always show the statusline.
+set encoding=utf-8              " Usually necessary to show unicode glyphs.
+set hidden                      " Enable hidden buffers. Basically enables
+                                " buffer switching without saving first.
+syntax on                       " Enable syntax highlighting.
+set updatetime=1000             " Update time of many VIM things. Seems a
+                                " reasonable value.
+
+" These are super slow even on a very fast machine.
+"set cursorline                  " show the cursor line
+"set cursorcolumn                " show the cursor column
+
+set magic                       " Does some magic ;-) Newline characters, ...
+"set spell                       " Spell checking is on by default.
+set relativenumber                      " Enable line numbering
+set ttyfast                     " The current terminal is a fast terminal so
+                                " more stuff can be sent at once.
+                                "
+set scrolloff=5                 " Keep 5 lines visible above/below cursor.
+set lazyredraw                  " More aggressive lazy redrawing. Does not appear to have an effect...
+
+
+set undofile                    " Save undo's after file closes
+set undodir=$HOME/.vim/undo     " where to save undo histories
+set undolevels=1000             " How many undos
+set undoreload=10000            " number of lines to save for undo
+
+" Unix like tab completion.
+set wildmenu
+set wildmode=longest,list
+
+" Mouse support for 'all'. Another very nice feature of this is that text
+" selection with the mouse now does no more select the line numbers.
+" Needs a terminal with X mouse support. One possibility for OSX is iTerm.
+" Most Linux terminals are fine anyway.
+set mouse=a
+
+
+" Autodetect filetype and necessary for some other stuff to work.
+filetype plugin on
+filetype on
+
+
+" =============================================================================
+" ==========  Searching
+" Fix vim regex handling.
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive if upper case in search string
+set gdefault                    " Always apply substitutions globally. No more
+                                " /g at the end
+" The next three work together to highlight searches.
+set incsearch
+set showmatch
+set hlsearch
+
+
+" =============================================================================
+" ==========  Tabs and indentation
+" Always use 4 spaces as tabs.
+filetype plugin indent on
+filetype indent on
+set tabstop=4
+set shiftwidth=4            " numbers of spaces to (auto)indent
+set expandtab
+set smartindent             " smart autoindenting when starting a new line
+set cindent                 " cindent
+set autoindent              " always set autoindenting on
+
+
+" =============================================================================
+" ==========  Color scheme
+" Use the light variant of the scheme if possible. This is in my experience
+" quite a bit easier to read under direct sunlight.
+set background=dark
+" Use the solarized colorscheme: http://ethanschoonover.com/solarized
+" Take care that your terminal uses the same colorscheme so everything looks
+" nice and consistent.
+colorscheme solarized
+
+
+" =============================================================================
+" ========== Magic happening behind the scenes
+" Automatically remove all trailing whitespace upon saving the current buffer.
+autocmd BufWritePre * :%s/\s\+$//e
+" All yanking and pasting works with the actual system clipboard. Does not
+" work with all vim version but other ways to achieve this behaviour also
+" exist and will be added if necessary.
+set clipboard=unnamedplus
+" Save all files upon loosing focus of vim, aka switching apps.
+au FocusLost * :wa
+
+
+" =============================================================================
+" ==========  Syntax highlighting
+" Recognize GLSL files based on the extension name.
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
+
+
+" =============================================================================
+" ========== Load all other settings stored in their own files in the settings
+" ========== subfolder
+for f in split(glob('$HOME/.dotfiles/vim/settings/*.vim'), '\n')
+    exec 'source' f
+endfor
+
+" Experimental Taghighlight coloring...
+hi Class term=bold ctermfg=red
+hi Function term=bold ctermfg=magenta
+hi Import term=bold ctermfg=green
+hi Member term=bold ctermfg=yellow
+hi GlobalVariable term=bold ctermfg=blue
+
+" Needed to reset the git-gutter background color
+highlight clear SignColumn
+
