@@ -6,6 +6,9 @@
 super + Return
 	termite
 
+super + backslash
+    nautilus
+
 # program launcher
 super + space
 	dmenu_run
@@ -82,7 +85,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} $(bspc query -M -m)/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
 
 #
 # preselect
