@@ -10,4 +10,4 @@ ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/tmux ~/.tmux
 ln -sf ~/.dotfiles/tmux/tmux-powerlinerc ~/.tmux-powerlinerc
-
+ln -sf ~/.dotfiles/bin ~/.bin

@@ -5,27 +5,6 @@
 # create user before running it 
 # add `<user> ALL=(ALL) NOPASSWD: ALL` to /etc/sudoers
 
-# Yaourt
-sudo pacman --noconfirm -S git
-git clone https://aur.archlinux.org/package-query.git
-cd package-query
-makepkg -si
-cd ..
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt
-makepkg -si
-cd ..
-rm -rf package-query
-rm -rf yaourt
-
-# GUI
-sudo pacman -S xorg xorg-server xorg-xinit xorg-server-utils xorg-apps nautilus leafpad lua ruby libpulse
-yaourt -S bspwm sxhkd tint2 dmenu conky-lua-archers
-
-# Terminal
-sudo pacman -S rxvt-unicode zsh powerline vim tmux ttf-dejavu
-yaourt -S ttf-pragmatapro
-chsh -s `which zsh`
-
-# Other
-sudo pacman -S chromium wget
+# run yaourt.sh
+# run basic_stuff.sh
+# run link.sh
