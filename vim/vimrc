@@ -29,6 +29,7 @@ map <F2> :source .vim_session <cr>
 map <F4> ccassert(false, "TODO");<ESC>
 noremap <leader>w :w<cr>
 
+"set fileformat=unix
                                 " to reach than the standard backslash.
 set noswapfile
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/

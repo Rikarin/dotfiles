@@ -11,7 +11,7 @@ plugins=(git history-substring-search fasd brew forklift)
 
 # Use the powerlevel9k theme!
 ZSH_THEME="../../powerlevel9k_theme/powerlevel9k"
-POWERLEVEL9K_MODE="awesome-patched"
+POWERLEVEL9K_MODE="awesome-fontconfig"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda background_jobs)
 # Overwrite a couple of settings.

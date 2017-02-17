@@ -1,2 +1,3 @@
-
-.config/chromium/
+config/gtk-2.0/
+config/chromium/
+config/pulse/
