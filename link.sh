@@ -12,3 +12,4 @@ ln -snf ~/.dotfiles/tmux ~/.tmux
 ln -snf ~/.dotfiles/tmux/tmux-powerlinerc ~/.tmux-powerlinerc
 ln -snf ~/.dotfiles/bin ~/.bin
 ln -snf ~/.dotfiles/fonts ~/.local/share/fonts
+ln -snf ~/.dotfiles/yaourtrc ~/.yaourtrc

@@ -4,3 +4,4 @@ config/chromium/
 config/pulse/
 config/dconf/
 tmux/resurrect/
+config/Trolltech.conf
