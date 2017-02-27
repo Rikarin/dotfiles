@@ -91,3 +91,9 @@
 [submodule "zsh/powerlevel9k_theme"]
 	path = zsh/powerlevel9k_theme
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "tmux/tmux-ressurect"]
+	path = tmux/tmux-ressurect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "tmux/tmux-continuum"]
+	path = tmux/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum

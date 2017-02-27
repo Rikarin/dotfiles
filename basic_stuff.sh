@@ -6,9 +6,13 @@ yaourt -S bspwm sxhkd tint2 dmenu conky-lua-archers
 sudo pacman -S pulseaudio alsa-utils jack2-dbus qjackctl
 
 # Terminal
-sudo pacman -S termite zsh powerline vim tmux ttf-dejavu
+sudo pacman -S termite zsh powerline vim tmux ttf-dejavu gdb
 yaourt -S ttf-pragmatapro
 chsh -s `which zsh`
 
 # Other
-sudo pacman -S chromium wget python2 dbus-python networkmanager
+sudo pacman -S chromium wget python2 dbus-python networkmanager python-pip nm-conneciton-editor mutt pavucontrol clang
+yaourt -S networkmanager-dmenu-git font-awesome
+
+pip install --user powerline-status
+
