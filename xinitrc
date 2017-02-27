@@ -1,4 +1,3 @@
-export PATH="${PATH}:/opt/RikarinStudio/bin:~/.bin:~/.clion/bin/"
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
