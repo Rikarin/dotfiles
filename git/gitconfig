@@ -4,7 +4,7 @@
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 
 [core]
-	autocrlf = true
+	autocrlf = input
 
 [alias]
 lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar) %C(red)- %an%C(reset) %C(white)%s%C(reset) %C(reset)%C(yellow)%d%C(reset)' --all

@@ -5,3 +5,11 @@ config/pulse/
 config/dconf/
 tmux/resurrect/
 config/Trolltech.conf
+config/mc/
+config/obs-studio/
+config/QtProject.conf
+config/Cadence/
+config/jack/
+config/pavucontrol.ini
+config/rncbc.org/
+config/vifm/
