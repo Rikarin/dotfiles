@@ -32,4 +32,5 @@ color15 = #fdf6e3
 clickable_url = true
 allow_bold = true
 dynamic_title = true
-font = Source Code Pro SemiBold 10
+#font = Source Code Pro SemiBold 10
+font = DejaVu Sans Mono SemiBold 10
