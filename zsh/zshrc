@@ -127,3 +127,7 @@ export LANG=en_US.UTF-8
 # PATHS. Currently adds miniconda, homebrew, and TeX related binaries.
 export PATH=~/.miniconda3/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/texbin
 ############################################################
+
+
+if [ "$TMUX" = "" ]; then tmux; fi
+
