@@ -1,4 +1,4 @@
-# setup internet before start doing this
+# setup internet before doing this
 # for VBox install dkms linux-headers, then virtualbox-guest-utils from pacman (or from cdrom)
 # ip link set <interface> up
 # dhcpcd
