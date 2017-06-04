@@ -12,7 +12,7 @@ chsh -s `which zsh`
 
 # Other
 sudo pacman -S chromium wget python2 dbus-python networkmanager python-pip nm-conneciton-editor mutt clang mc
-yaourt -S networkmanager-dmenu-git font-awesome
+yaourt -S networkmanager-dmenu-git ttf-font-awesome
 
 pip install --user powerline-status
 
