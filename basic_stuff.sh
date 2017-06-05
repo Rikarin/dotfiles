@@ -7,7 +7,7 @@ sudo pacman -S alsa-utils jack2-dbus qjackctl pavucontrol
 
 # Terminal
 sudo pacman -S termite zsh powerline vim tmux ttf-dejavu gdb
-yaourt -S ttf-pragmatapro
+yaourt -S nerd-fonts-complete
 chsh -s `which zsh`
 
 # Other

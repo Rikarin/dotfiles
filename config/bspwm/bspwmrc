@@ -1,7 +1,5 @@
 #! /bin/sh
 
-sxhkd &
-
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width          0
@@ -26,5 +24,5 @@ unset i
 bspc rule -a LibTest state=floating
 bspc rule -a qjackctl state=floating
 
-feh --bs-scale ~/.dotfiles/wallpaper.jpg &
-compton -c &
+#feh --bs-scale ~/.dotfiles/wallpaper.jpg &
+#compton -c &
