@@ -1,5 +1,5 @@
 # GUI
-sudo pacman -S xorg xorg-server xorg-xinit xorg-server-utils xorg-apps nautilus leafpad lua ruby libpulse htop
+sudo pacman -S xorg-xinit xorg-server xorg-xinit xorg-apps xorg nautilus leafpad lua ruby libpulse htop
 yaourt -S bspwm sxhkd tint2 dmenu conky-lua-archers
 
 # Audio use Cadence
